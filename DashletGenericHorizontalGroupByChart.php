@@ -28,6 +28,8 @@ abstract class DashletGenericHorizontalGroupByChart extends DashletGenericChart
     protected $subtitle = '';
     
     /** 
+     * Don't override this method, since it does all the work of actually rendering the chart.
+     *
      * @see DashletGenericChart::display() 
      */ 
     public function display() 
