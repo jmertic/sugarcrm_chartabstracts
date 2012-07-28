@@ -16,9 +16,9 @@ Here's an example on how to build a chart dashlet from one of these:
 3. Add a YOURCHARTDASHLETNAME.lang.LANGUAGE.php file with the following contents:
 
         <?php
-        $dashletStrings['AccountsByContactsDashlet'] = array('LBL_TITLE'       => 'YOURCHARTDASHLETTITLE',
-                                                            'LBL_DESCRIPTION' => 'YOURCHARTDASHLETDESCRIPTION',
-                                                            'LBL_REFRESH'     => 'Refresh Chart');
+        $dashletStrings['YOURCHARTDASHLETNAME'] = array('LBL_TITLE'       => 'YOURCHARTDASHLETTITLE',
+                                                        'LBL_DESCRIPTION' => 'YOURCHARTDASHLETDESCRIPTION',
+                                                        'LBL_REFRESH'     => 'Refresh Chart');
 
 4. Add the Dashlet class like the following ( example is for a bar chart )
 
@@ -31,7 +31,7 @@ Here's an example on how to build a chart dashlet from one of these:
 
             protected function getDataset()
             {
-                $returnArray = array()
+                $returnArray = array();
 
                 // Have this method get the data, put it in the associative array $returnArray
  
