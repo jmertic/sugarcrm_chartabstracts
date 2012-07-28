@@ -33,7 +33,7 @@ require_once('include/SugarCharts/SugarChartFactory.php');
 abstract class DashletGenericPieChart extends DashletGenericChart 
 {  
     /**
-     * Array of group by columns
+     * Value matches <ColumnName> in DashletGenericPieChart::getDataset() dataset returned
      *
      * @var array 
      */
@@ -74,7 +74,8 @@ abstract class DashletGenericPieChart extends DashletGenericChart
         $sugarChart->url_params = $this->urlParams;
         $sugarChart->setData($this->getDataset());
         if ( !empty($this->groupBy[0]) ) {
-            $sugarChart->data_set = $sugarChart->sortData($sugarChart->data_set, $this->groupBy[0], true);
+            $translate = isset($GLOBALS['app_list_strings'][$this->groupBy[0].'_dom']);
+            $sugarChart->data_set = $sugarChart->sortData($sugarChart->data_set, $this->groupBy[0], $translate);
         }
         $xmlFile = $sugarChart->getXMLFileName($this->id); 
         $sugarChart->saveXMLFile($xmlFile, $sugarChart->generateXML()); 
